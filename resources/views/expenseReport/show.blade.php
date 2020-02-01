@@ -9,8 +9,10 @@
     <div class="row">
         <div class="col">
             <a class="btn btn-secondary" href="/expense_reports">Black</a>
+            <a class="btn btn-primary" href="/expense_reports/{{$report->id}}/confirmSendEmail">Send Email</a>
         </div>
     </div>
+
 
     <div class="row mt-3">
         <div class="col">
