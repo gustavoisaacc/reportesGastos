@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col">
-            <a class="btn btn-secondary" href="/expense_reports">Black</a>
+            <a class="btn btn-secondary" href="/expense_reports/{{$report->id}}/expenses">Black</a>
         </div>
     </div>
 
@@ -23,11 +23,16 @@
                     </ul>
                 </div>
             @endif
-            <form action="/expense_reports" method="POST">
+            <form action="/expense_reports/{{$report->id}}/expenses" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="title">Title:</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Type a title" value="{{old('title')}}">
+                    <label for="title">Description:</label>
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Type a description" value="{{old('description')}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Amount:</label>
+                    <input type="text" class="form-control" id="amount" name="amount" placeholder="Type a amount" value="{{old('amount')}}">
                 </div>
 
                 <button class="btn btn-primary" type="submit">Submit</button>
